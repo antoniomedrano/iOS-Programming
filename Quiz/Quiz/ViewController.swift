@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //MARK: Properties
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var answerLabel: UILabel!
 
