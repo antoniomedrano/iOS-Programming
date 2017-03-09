@@ -46,7 +46,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
             view.backgroundColor = UIColor.darkGray
         } else {
             //Change the color light again
-            view.backgroundColor = UIColor.init(colorLiteralRed: 245.0 / 255, green: 244.0 / 255, blue: 241.0 / 255, alpha: 1.0)
+            view.backgroundColor = UIColor.init(red: 245.0 / 255, green: 244.0 / 255, blue: 241.0 / 255, alpha: 1.0)
         }
     }
     
