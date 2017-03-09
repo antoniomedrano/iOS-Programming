@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversionViewController: UIViewController {
+class ConversionViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Properties
     @IBOutlet var celsiusLabel: UILabel!
@@ -20,6 +20,7 @@ class ConversionViewController: UIViewController {
         }
     }
     
+    // var varName {} is a computed variable or computed property. It doesn't hold an explicit value, instead it calculates it each time its value is called
     var celsiusValue: Measurement<UnitTemperature>? {
         if let fahrenheitValue = fahrenheitValue {
             return fahrenheitValue.converted(to: .celsius)
@@ -62,4 +63,32 @@ class ConversionViewController: UIViewController {
         nf.maximumFractionDigits = 1
         return nf
     }()
+    
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        
+        print("Current text: \(textField.text)")
+        print("Replacement text: \(string)")
+        print("Index: \(range.location)")
+
+        let checkValidDouble = Double(textField.text! + string)
+        let checkValidString = String(textField.text! + string)
+        
+        if checkValidDouble == nil, checkValidString != ".", checkValidString != "-", checkValidString != "-.", string != "" {
+            return false
+        } else {
+            return true
+        }
+        
+        
+        
+//        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
+//        let replacementTextHasDecimalSeparator = string.range(of: ".")
+//        if existingTextHasDecimalSeparator != nil, replacementTextHasDecimalSeparator != nil {
+//            return false
+//        } else {
+//            return true
+//        }
+    }
 }
