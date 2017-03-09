@@ -14,6 +14,7 @@
 		A9040EAC1E69426100191C40 /* WorldTrotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9040EAB1E69426100191C40 /* WorldTrotterTests.swift */; };
 		A9040EB71E69426100191C40 /* WorldTrotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9040EB61E69426100191C40 /* WorldTrotterUITests.swift */; };
 		A9040EC51E6E9EE900191C40 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9040EC41E6E9EE900191C40 /* ConversionViewController.swift */; };
+		A9040EC81E71DEA500191C40 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9040EC71E71DEA500191C40 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A9040EB61E69426100191C40 /* WorldTrotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTrotterUITests.swift; sourceTree = "<group>"; };
 		A9040EB81E69426100191C40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9040EC41E6E9EE900191C40 /* ConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
+		A9040EC71E71DEA500191C40 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9040EC81E71DEA500191C40 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 				A9040EAA1E69426100191C40 /* WorldTrotterTests */,
 				A9040EB51E69426100191C40 /* WorldTrotterUITests */,
 				A9040E941E69426100191C40 /* Products */,
+				A9040EC61E71DEA500191C40 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +127,14 @@
 				A9040EB81E69426100191C40 /* Info.plist */,
 			);
 			path = WorldTrotterUITests;
+			sourceTree = "<group>";
+		};
+		A9040EC61E71DEA500191C40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9040EC71E71DEA500191C40 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
