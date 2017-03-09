@@ -31,7 +31,23 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ConversionViewController loaded its view.")
         updateCelsiusLabel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        //SILVER Challenge (Night Mode)
+        // code credit: https://forums.bignerdranch.com/t/heres-my-silver-challenge-solution/11495
+        let currentHour = Calendar.current.component(.hour, from: Date())
+        print(currentHour)
+        if currentHour > 19 || currentHour < 6 {
+            //Change the background color to a darker color
+            view.backgroundColor = UIColor.darkGray
+        } else {
+            //Change the color light again
+            view.backgroundColor = UIColor.init(colorLiteralRed: 245.0 / 255, green: 244.0 / 255, blue: 241.0 / 255, alpha: 1.0)
+        }
     }
     
     
