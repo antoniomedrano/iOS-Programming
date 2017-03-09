@@ -73,14 +73,15 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         print("Index: \(range.location)")
         
         // SECOND TRY AT BRONZE CHALLENGE, this one works great!
-        var checkValidString: String = String(textField.text!)
+        var checkValidString: String = textField.text!
 
-        checkValidString.insert(contentsOf: string.characters, at: checkValidString.index(checkValidString.startIndex, offsetBy: range.location))
+        checkValidString.insert(contentsOf: string.characters,
+                                at: checkValidString.index(checkValidString.startIndex, offsetBy: range.location))
         
-        let checkValidDouble = Double(checkValidString)
+        let checkValidDouble: Double? = Double(checkValidString)
         
-        if checkValidDouble == nil, checkValidString != ".", checkValidString != "-", checkValidString != "-.",
-            string != "", string != "+", string != "+." {
+        if checkValidDouble == nil, string != "", checkValidString != ".", checkValidString != "+",
+            checkValidString != "-", checkValidString != "-.", checkValidString != "+." {
             return false
         } else {
             return true
