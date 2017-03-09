@@ -71,18 +71,32 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         print("Current text: \(textField.text)")
         print("Replacement text: \(string)")
         print("Index: \(range.location)")
-
-        let checkValidDouble = Double(textField.text! + string)
-        let checkValidString = String(textField.text! + string)
         
-        if checkValidDouble == nil, checkValidString != ".", checkValidString != "-", checkValidString != "-.", string != "" {
+        // SECOND TRY AT BRONZE CHALLENGE, this one works great!
+        var checkValidString: String = String(textField.text!)
+
+        checkValidString.insert(contentsOf: string.characters, at: checkValidString.index(checkValidString.startIndex, offsetBy: range.location))
+        
+        let checkValidDouble = Double(checkValidString)
+        
+        if checkValidDouble == nil, checkValidString != ".", checkValidString != "-", checkValidString != "-.",
+            string != "", string != "+", string != "+." {
             return false
         } else {
             return true
         }
+
+//        // FIRST TRY AT BRONZE CHALLENGE, works as long as the cursor is always at the far right
+//        let checkValidString = String(textField.text! + string)
+//        let checkValidDouble = Double(checkValidString!)
+//
+//        if checkValidDouble == nil, checkValidString != ".", checkValidString != "-", checkValidString != "-.", string != "" {
+//            return false
+//        } else {
+//            return true
+//        }
         
-        
-        
+//        // ORIGINAL SOLUTION IN BOOK
 //        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
 //        let replacementTextHasDecimalSeparator = string.range(of: ".")
 //        if existingTextHasDecimalSeparator != nil, replacementTextHasDecimalSeparator != nil {
