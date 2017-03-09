@@ -91,7 +91,8 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
 //        let checkValidString = String(textField.text! + string)
 //        let checkValidDouble = Double(checkValidString!)
 //
-//        if checkValidDouble == nil, checkValidString != ".", checkValidString != "-", checkValidString != "-.", string != "" {
+//        if checkValidDouble == nil, string != "", checkValidString != ".", checkValidString != "+",
+//            checkValidString != "-", checkValidString != "-.", checkValidString != "+." {
 //            return false
 //        } else {
 //            return true
