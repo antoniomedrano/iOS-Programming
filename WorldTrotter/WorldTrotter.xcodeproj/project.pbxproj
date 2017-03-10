@@ -14,6 +14,10 @@
 		A9040EAC1E69426100191C40 /* WorldTrotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9040EAB1E69426100191C40 /* WorldTrotterTests.swift */; };
 		A9040EB71E69426100191C40 /* WorldTrotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9040EB61E69426100191C40 /* WorldTrotterUITests.swift */; };
 		A9040EC51E6E9EE900191C40 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9040EC41E6E9EE900191C40 /* ConversionViewController.swift */; };
+		A9040EC81E71DEA500191C40 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9040EC71E71DEA500191C40 /* MapKit.framework */; };
+		A9040ECA1E7207ED00191C40 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9040EC91E7207ED00191C40 /* MapViewController.swift */; };
+		A9040ECC1E721FA900191C40 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9040ECB1E721FA900191C40 /* WebViewController.swift */; };
+		A9040ECE1E7221E300191C40 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9040ECD1E7221E300191C40 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		A9040EB61E69426100191C40 /* WorldTrotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTrotterUITests.swift; sourceTree = "<group>"; };
 		A9040EB81E69426100191C40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9040EC41E6E9EE900191C40 /* ConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
+		A9040EC71E71DEA500191C40 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A9040EC91E7207ED00191C40 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A9040ECB1E721FA900191C40 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A9040ECD1E7221E300191C40 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9040ECE1E7221E300191C40 /* WebKit.framework in Frameworks */,
+				A9040EC81E71DEA500191C40 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +91,7 @@
 				A9040EAA1E69426100191C40 /* WorldTrotterTests */,
 				A9040EB51E69426100191C40 /* WorldTrotterUITests */,
 				A9040E941E69426100191C40 /* Products */,
+				A9040EC61E71DEA500191C40 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +111,8 @@
 				A9040E961E69426100191C40 /* AppDelegate.swift */,
 				A9040EC41E6E9EE900191C40 /* ConversionViewController.swift */,
 				A9040E9A1E69426100191C40 /* Main.storyboard */,
+				A9040EC91E7207ED00191C40 /* MapViewController.swift */,
+				A9040ECB1E721FA900191C40 /* WebViewController.swift */,
 				A9040E9D1E69426100191C40 /* Assets.xcassets */,
 				A9040E9F1E69426100191C40 /* LaunchScreen.storyboard */,
 				A9040EA21E69426100191C40 /* Info.plist */,
@@ -123,6 +136,15 @@
 				A9040EB81E69426100191C40 /* Info.plist */,
 			);
 			path = WorldTrotterUITests;
+			sourceTree = "<group>";
+		};
+		A9040EC61E71DEA500191C40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9040ECD1E7221E300191C40 /* WebKit.framework */,
+				A9040EC71E71DEA500191C40 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9040EC51E6E9EE900191C40 /* ConversionViewController.swift in Sources */,
+				A9040ECA1E7207ED00191C40 /* MapViewController.swift in Sources */,
 				A9040E971E69426100191C40 /* AppDelegate.swift in Sources */,
+				A9040ECC1E721FA900191C40 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
