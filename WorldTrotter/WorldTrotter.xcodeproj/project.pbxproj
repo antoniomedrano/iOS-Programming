@@ -110,11 +110,11 @@
 			children = (
 				A9040E961E69426100191C40 /* AppDelegate.swift */,
 				A9040EC41E6E9EE900191C40 /* ConversionViewController.swift */,
-				A9040E9A1E69426100191C40 /* Main.storyboard */,
 				A9040EC91E7207ED00191C40 /* MapViewController.swift */,
 				A9040ECB1E721FA900191C40 /* WebViewController.swift */,
-				A9040E9D1E69426100191C40 /* Assets.xcassets */,
+				A9040E9A1E69426100191C40 /* Main.storyboard */,
 				A9040E9F1E69426100191C40 /* LaunchScreen.storyboard */,
+				A9040E9D1E69426100191C40 /* Assets.xcassets */,
 				A9040EA21E69426100191C40 /* Info.plist */,
 			);
 			path = WorldTrotter;
