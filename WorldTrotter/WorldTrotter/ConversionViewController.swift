@@ -84,24 +84,48 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
         
+        let currentLocale = Locale.current
+        let decimalSeparator = currentLocale.decimalSeparator ?? "."
+//        var newString: String = string
+        
         print("Current text: \(textField.text)")
         print("Replacement text: \(string)")
         print("Index: \(range.location)")
+        print("DecimalSeparator: \(decimalSeparator)")
         
         // SECOND TRY AT BRONZE CHALLENGE, this one works great!
-        var checkValidString: String = textField.text!
+        
+        // if decimal separator is a comma, convert a comma to period for checking if valid double
+//        if decimalSeparator == "," {
+//            if string.contains(",") {
+//                newString = string.replacingOccurrences(of: ",", with: ".")
+//            }
+//        }
+        
+        // also convert existing text to period decimal separator
+        var checkValidString: String = textField.text!//.replacingOccurrences(of: ",", with: ".")
 
         checkValidString.insert(contentsOf: string.characters,
                                 at: checkValidString.index(checkValidString.startIndex, offsetBy: range.location))
         
         let checkValidDouble: Double? = Double(checkValidString)
         
-        if checkValidDouble == nil, string != "", checkValidString != ".", checkValidString != "+",
-            checkValidString != "-", checkValidString != "-.", checkValidString != "+." {
-            return false
-        } else {
-            return true
-        }
+//        if decimalSeparator == "," {
+//            if checkValidDouble == nil, string != "", checkValidString != ",", checkValidString != "+",
+//                checkValidString != "-", checkValidString != "-,", checkValidString != "+," {
+//                return false
+//            } else {
+//                return true
+//            }
+//        }
+//        else {   // by default, assume a "." decimal separator
+            if checkValidDouble == nil, string != "", checkValidString != ".", checkValidString != "+",
+                checkValidString != "-", checkValidString != "-.", checkValidString != "+." {
+                return false
+            } else {
+                return true
+            }
+//        }
 
 //        // FIRST TRY AT BRONZE CHALLENGE, works as long as the cursor is always at the far right
 //        let checkValidString = String(textField.text! + string)
