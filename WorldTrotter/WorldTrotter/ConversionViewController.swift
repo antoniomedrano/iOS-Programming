@@ -53,8 +53,8 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Actions
     @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField) {
-        if let text = textField.text, let value = Double(text) {
-            fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
+        if let text = textField.text, let number = numberFormatter.number(from: text) {
+            fahrenheitValue = Measurement(value: number.doubleValue, unit: .fahrenheit)
         } else {
             fahrenheitValue = nil
         }
@@ -86,45 +86,25 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         
         let currentLocale = Locale.current
         let decimalSeparator = currentLocale.decimalSeparator ?? "."
-//        var newString: String = string
         
-        print("Current text: \(textField.text)")
+        print("Current text: \(String(describing: textField.text))")
         print("Replacement text: \(string)")
         print("Index: \(range.location)")
         print("DecimalSeparator: \(decimalSeparator)")
         
-        // SECOND TRY AT BRONZE CHALLENGE, this one works great!
-        
-        // if decimal separator is a comma, convert a comma to period for checking if valid double
-//        if decimalSeparator == "," {
-//            if string.contains(",") {
-//                newString = string.replacingOccurrences(of: ",", with: ".")
-//            }
-//        }
-        
-        // also convert existing text to period decimal separator
-        var checkValidString: String = textField.text!//.replacingOccurrences(of: ",", with: ".")
-
-        checkValidString.insert(contentsOf: string.characters,
-                                at: checkValidString.index(checkValidString.startIndex, offsetBy: range.location))
-        
-        let checkValidDouble: Double? = Double(checkValidString)
-        
-//        if decimalSeparator == "," {
-//            if checkValidDouble == nil, string != "", checkValidString != ",", checkValidString != "+",
-//                checkValidString != "-", checkValidString != "-,", checkValidString != "+," {
-//                return false
-//            } else {
-//                return true
-//            }
-//        }
-//        else {   // by default, assume a "." decimal separator
-            if checkValidDouble == nil, string != "", checkValidString != ".", checkValidString != "+",
-                checkValidString != "-", checkValidString != "-.", checkValidString != "+." {
-                return false
-            } else {
-                return true
-            }
+//        // SECOND TRY AT BRONZE CHALLENGE, this one works great! (when decimal separator is a period)
+//        var checkValidString: String = textField.text!
+//
+//        checkValidString.insert(contentsOf: string.characters,
+//                                at: checkValidString.index(checkValidString.startIndex, offsetBy: range.location))
+//        
+//        let checkValidDouble: Double? = Double(checkValidString)
+//
+//        if checkValidDouble == nil, string != "", checkValidString != ".", checkValidString != "+",
+//            checkValidString != "-", checkValidString != "-.", checkValidString != "+." {
+//            return false
+//        } else {
+//            return true
 //        }
 
 //        // FIRST TRY AT BRONZE CHALLENGE, works as long as the cursor is always at the far right
@@ -138,13 +118,13 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
 //            return true
 //        }
         
-//        // ORIGINAL SOLUTION IN BOOK
-//        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
-//        let replacementTextHasDecimalSeparator = string.range(of: ".")
-//        if existingTextHasDecimalSeparator != nil, replacementTextHasDecimalSeparator != nil {
-//            return false
-//        } else {
-//            return true
-//        }
+        // ORIGINAL SOLUTION IN BOOK (including international number formatting from Chapter 7)
+        let existingTextHasDecimalSeparator = textField.text?.range(of: decimalSeparator)
+        let replacementTextHasDecimalSeparator = string.range(of: decimalSeparator)
+        if existingTextHasDecimalSeparator != nil, replacementTextHasDecimalSeparator != nil {
+            return false
+        } else {
+            return true
+        }
     }
 }
