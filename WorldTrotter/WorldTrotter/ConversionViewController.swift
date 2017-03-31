@@ -92,31 +92,20 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         print("Index: \(range.location)")
         print("DecimalSeparator: \(decimalSeparator)")
         
-        // SECOND TRY AT BRONZE CHALLENGE, this one works great!
-        var checkValidString: String = textField.text!
+        // Chapter 4 BRONZE CHALLENGE, also works internationally with different number formats!
+        var proposedInputString: String = textField.text!
 
-        checkValidString.insert(contentsOf: string.characters,
-                                at: checkValidString.index(checkValidString.startIndex, offsetBy: range.location))
+        proposedInputString.insert(contentsOf: string.characters,
+                                at: proposedInputString.index(proposedInputString.startIndex, offsetBy: range.location))
         
-        let checkValidNumber = numberFormatter.number(from: checkValidString)
+        let proposedNumber = numberFormatter.number(from: proposedInputString)
         
-        if checkValidNumber == nil, string != "", checkValidString != decimalSeparator,
-            checkValidString != "-", checkValidString != "-\(decimalSeparator)" {
+        if proposedNumber == nil, string != "", proposedInputString != decimalSeparator,
+            proposedInputString != "-", proposedInputString != "-\(decimalSeparator)" {
             return false
         } else {
             return true
         }
-
-//        // FIRST TRY AT BRONZE CHALLENGE, works as long as the cursor is always at the far right
-//        let checkValidString = String(textField.text! + string)
-//        let checkValidDouble = Double(checkValidString!)
-//
-//        if checkValidDouble == nil, string != "", checkValidString != ".", checkValidString != "+",
-//            checkValidString != "-", checkValidString != "-.", checkValidString != "+." {
-//            return false
-//        } else {
-//            return true
-//        }
         
 //        // ORIGINAL SOLUTION IN BOOK (including international number formatting from Chapter 7)
 //        let existingTextHasDecimalSeparator = textField.text?.range(of: decimalSeparator)
