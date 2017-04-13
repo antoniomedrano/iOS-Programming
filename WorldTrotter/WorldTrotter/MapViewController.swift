@@ -90,7 +90,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
 //    func showLocalization(sender: UIButton!) {
-//        locationManager.requestWhenInUseAuthorization()
+//        locationManager?.requestWhenInUseAuthorization()
 //        self.mapView(mapView, didUpdate: location)
 //    }
     
@@ -99,5 +99,4 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let zoomedInCurrentLocation = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 500, 500)
         mapView.setRegion(zoomedInCurrentLocation, animated: true)
     }
-    
 }
