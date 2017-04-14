@@ -89,6 +89,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.userTrackingMode = .follow
     }
     
+    
 //    func showLocalization(sender: UIButton!) {
 //        locationManager?.requestWhenInUseAuthorization()
 //        self.mapView(mapView, didUpdate: location)
