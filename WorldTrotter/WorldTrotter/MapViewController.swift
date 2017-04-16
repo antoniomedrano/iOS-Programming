@@ -24,6 +24,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // Set it as *the* view of this view controller
         view = mapView
         
+        // Add segmented control buttons
         let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
         segmentedControl.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         segmentedControl.selectedSegmentIndex = 0
@@ -34,7 +35,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         view.addSubview(segmentedControl)
         
         let topConstraint = segmentedControl.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 8)
-        
         let margins = view.layoutMarginsGuide
         let leadingConstraint = segmentedControl.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
         let trailingConstraint = segmentedControl.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
@@ -43,6 +43,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
         
+        // Initialize user location button
         initLocalizationButton(segmentedControl)
     }
     
@@ -67,10 +68,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func initLocalizationButton(_ anyView: UIView!){
         let localizationButton = UIButton.init(type: .system)
         localizationButton.setTitle("Localization", for: .normal)
+        localizationButton.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         localizationButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(localizationButton)
         
         //Constraints
+        //WORK ON GETTING IT IN THE LOWER LEFT CORNER WITH THE SIZE OF THE WORD
         let topConstraint = localizationButton.topAnchor.constraint(equalTo:anyView
             .topAnchor, constant: 32 )
         let leadingConstraint = localizationButton.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor)
@@ -81,19 +84,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         trailingConstraint.isActive = true
         
         localizationButton.addTarget(self, action: #selector(MapViewController.showLocalization(sender:)), for: .touchUpInside)
+        // LOOK UP # and (sender:)
     }
     
     func showLocalization(sender: UIButton!){
-        locationManager!.requestWhenInUseAuthorization()//se agrega permiso en info.plist
-        mapView.showsUserLocation = true //fire up the method mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation)
-        mapView.userTrackingMode = .follow
+        locationManager!.requestWhenInUseAuthorization() //check that user location is authorized in info.plist
+        mapView.showsUserLocation = true //fire up the method mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation)    /////////// LOOK THIS UP
+        mapView.userTrackingMode = .follow   //////// LOOK THIS UP
     }
-    
-    
-//    func showLocalization(sender: UIButton!) {
-//        locationManager?.requestWhenInUseAuthorization()
-//        self.mapView(mapView, didUpdate: location)
-//    }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         //This is a method from MKMapViewDelegate, fires up when the user`s location changes
