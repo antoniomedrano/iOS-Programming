@@ -12,14 +12,14 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var mapView: MKMapView!
-    var locationManager: CLLocationManager?
+    var locationManager: CLLocationManager!
     
     override func loadView() {
         // Create a map view
         mapView = MKMapView()
         mapView.delegate = self
         locationManager = CLLocationManager()
-        locationManager!.delegate = self
+        locationManager.delegate = self
         
         // Set it as *the* view of this view controller
         view = mapView
@@ -88,7 +88,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func showLocalization(sender: UIButton!){
-        locationManager!.requestWhenInUseAuthorization() //check that user location is authorized in info.plist
+        locationManager.requestWhenInUseAuthorization() //check that user location is authorized in info.plist
         mapView.showsUserLocation = true //fire up the method mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation)    /////////// LOOK THIS UP
         mapView.userTrackingMode = .follow   //////// LOOK THIS UP
     }
