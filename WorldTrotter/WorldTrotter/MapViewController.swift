@@ -11,7 +11,8 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    // MKMapViewDelegate and CLLocationManagerDelegate help us with the Chapter 6 Silver Challenge: Add a user localization button.
+    // MKMapViewDelegate and CLLocationManagerDelegate help us with the Chapter 6 Silver Challenge:
+    // Add a user localization button.
     var mapView: MKMapView!
     var locationManager: CLLocationManager!
     
