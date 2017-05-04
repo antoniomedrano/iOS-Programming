@@ -18,6 +18,7 @@
 		A9040ECA1E7207ED00191C40 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9040EC91E7207ED00191C40 /* MapViewController.swift */; };
 		A9040ECC1E721FA900191C40 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9040ECB1E721FA900191C40 /* WebViewController.swift */; };
 		A9040ECE1E7221E300191C40 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9040ECD1E7221E300191C40 /* WebKit.framework */; };
+		A9D68F841EBAA3A4005EE20A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9D68F861EBAA3A4005EE20A /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,9 @@
 		A9040ECD1E7221E300191C40 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A9D68F801EBA97F0005EE20A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A9D68F811EBA9891005EE20A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		A9D68F851EBAA3A4005EE20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A9D68F871EBAA3B7005EE20A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A9D68F881EBAA3B8005EE20A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 				A9040E961E69426100191C40 /* AppDelegate.swift */,
 				A9040EC41E6E9EE900191C40 /* ConversionViewController.swift */,
 				A9040EC91E7207ED00191C40 /* MapViewController.swift */,
+				A9D68F861EBAA3A4005EE20A /* Localizable.strings */,
 				A9040ECB1E721FA900191C40 /* WebViewController.swift */,
 				A9040E9A1E69426100191C40 /* Main.storyboard */,
 				A9040E9F1E69426100191C40 /* LaunchScreen.storyboard */,
@@ -241,6 +246,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = A9040E8A1E69426100191C40;
 			productRefGroup = A9040E941E69426100191C40 /* Products */;
@@ -260,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9040EA11E69426100191C40 /* LaunchScreen.storyboard in Resources */,
+				A9D68F841EBAA3A4005EE20A /* Localizable.strings in Resources */,
 				A9040E9E1E69426100191C40 /* Assets.xcassets in Resources */,
 				A9040E9C1E69426100191C40 /* Main.storyboard in Resources */,
 			);
@@ -341,6 +348,16 @@
 				A9040EA01E69426100191C40 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A9D68F861EBAA3A4005EE20A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9D68F851EBAA3A4005EE20A /* Base */,
+				A9D68F871EBAA3B7005EE20A /* en */,
+				A9D68F881EBAA3B8005EE20A /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
