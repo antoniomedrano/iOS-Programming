@@ -75,21 +75,29 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func initLocalizationButton(_ anyView: UIView!){
         let localizationButton = UIButton.init(type: .system)
-        localizationButton.setTitle("Localization", for: .normal)
+        localizationButton.setTitle("🎯", for: .normal)
         localizationButton.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         localizationButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(localizationButton)
+        localizationButton.layer.cornerRadius = 5
+        localizationButton.layer.borderWidth = 1
+        localizationButton.layer.borderColor = UIColor.blue.cgColor
         
         //Constraints
-        //WORK ON GETTING IT IN THE LOWER LEFT CORNER WITH THE SIZE OF THE WORD
-        let topConstraint = localizationButton.topAnchor.constraint(equalTo:anyView
-            .topAnchor, constant: 32 )
-        let leadingConstraint = localizationButton.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor)
-        let trailingConstraint = localizationButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
         
-        topConstraint.isActive = true
+        //Puts button at text width in the lower left
+        let bottomConstraint = localizationButton.bottomAnchor.constraint(equalTo:bottomLayoutGuide.topAnchor, constant: -24 )
+        let leadingConstraint = localizationButton.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor)
+        bottomConstraint.isActive = true
         leadingConstraint.isActive = true
-        trailingConstraint.isActive = true
+        
+        // This puts button full screen width and right under the segmented control
+        //let topConstraint = localizationButton.topAnchor.constraint(equalTo:anyView.topAnchor, constant: 32 )
+        //let leadingConstraint = localizationButton.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor)
+        //let trailingConstraint = localizationButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
+        //topConstraint.isActive = true
+        //leadingConstraint.isActive = true
+        //trailingConstraint.isActive = true
         
         localizationButton.addTarget(self, action: #selector(MapViewController.showLocalization(sender:)), for: .touchUpInside)
         // LOOK UP # and (sender:)
