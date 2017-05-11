@@ -58,6 +58,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewDidLoad() {
         super.viewDidLoad()
         print("MapViewController loaded its view.")
+        
+        // set initial location
+        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444) // Honolulu
+        //let initialLocation = CLLocation(latitude: 34.42, longitude: -119.72) // Santa Barbara
+        
+        centerMapOnLocation(location: initialLocation)
+        
+        // show a single artwork on map
+        let artwork = Artwork(title: "King David Kalakaua",
+                              locationName: "Waikiki Gateway Park",
+                              discipline: "Sculpture",
+                              coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
+        
+        mapView.addAnnotation(artwork)
+        
     }
     
     func mapTypeChanged(_ segControl: UISegmentedControl) {
@@ -102,7 +117,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         //trailingConstraint.isActive = true
         
         localizationButton.addTarget(self, action: #selector(MapViewController.showLocalization(sender:)), for: .touchUpInside)
-        // LOOK UP # and (sender:)
+        // LOOK UP #selector()
     }
     
     func showLocalization(sender: UIButton!){
@@ -115,5 +130,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         //This is a method from MKMapViewDelegate, fires up when the user`s location changes
         let zoomedInCurrentLocation = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 500, 500)
         mapView.setRegion(zoomedInCurrentLocation, animated: true)
+    }
+    
+    // Set initial map extent
+    let regionRadius: CLLocationDistance = 5000
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
 }
