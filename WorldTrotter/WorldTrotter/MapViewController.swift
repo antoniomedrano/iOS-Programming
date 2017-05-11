@@ -81,7 +81,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         view.addSubview(localizationButton)
         localizationButton.layer.cornerRadius = 5
         localizationButton.layer.borderWidth = 1
-        localizationButton.layer.borderColor = UIColor.blue.cgColor
+        localizationButton.layer.borderColor = UIColor.black.cgColor
         
         //Constraints
         
