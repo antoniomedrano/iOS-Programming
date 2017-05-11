@@ -74,6 +74,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func initLocalizationButton(_ anyView: UIView!){
+        
+        // add a button that when pressed zooms to the user's location
         let localizationButton = UIButton.init(type: .system)
         localizationButton.setTitle("🎯", for: .normal)
         localizationButton.backgroundColor = UIColor.white.withAlphaComponent(0.5)
