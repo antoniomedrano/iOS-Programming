@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,22 +47,31 @@
                                     <action selector="showNextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SvF-bs-PqA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEc-SF-NWb">
+                                <rect key="frame" x="166.5" y="80" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="K6d-Fm-rhx" firstAttribute="top" secondItem="zaR-vH-vmm" secondAttribute="bottom" constant="176" id="45u-V0-QFr"/>
                             <constraint firstItem="K6d-Fm-rhx" firstAttribute="centerX" secondItem="zaR-vH-vmm" secondAttribute="centerX" id="8c6-36-VOz"/>
+                            <constraint firstItem="dEc-SF-NWb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G4g-ng-O0g"/>
                             <constraint firstItem="RhK-S4-zcF" firstAttribute="centerX" secondItem="zaR-vH-vmm" secondAttribute="centerX" id="GWg-Yf-ciK"/>
                             <constraint firstItem="R1m-C8-F7d" firstAttribute="centerX" secondItem="zaR-vH-vmm" secondAttribute="centerX" id="Qwk-i3-OSU"/>
                             <constraint firstItem="RhK-S4-zcF" firstAttribute="top" secondItem="K6d-Fm-rhx" secondAttribute="bottom" constant="19" id="Utp-dr-Qgc"/>
                             <constraint firstItem="zaR-vH-vmm" firstAttribute="top" secondItem="R1m-C8-F7d" secondAttribute="bottom" constant="16" id="i1g-Rk-WpG"/>
                             <constraint firstItem="R1m-C8-F7d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="iWa-2y-W3t"/>
                             <constraint firstItem="R1m-C8-F7d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rxT-gU-dAY"/>
+                            <constraint firstItem="dEc-SF-NWb" firstAttribute="top" secondItem="R1m-C8-F7d" secondAttribute="top" id="tgd-sK-kdE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="K6d-Fm-rhx" id="a42-7t-jhM"/>
-                        <outlet property="questionLabel" destination="R1m-C8-F7d" id="bOl-gV-Nhb"/>
+                        <outlet property="currentQuestionLabel" destination="R1m-C8-F7d" id="7Dx-iY-V6k"/>
+                        <outlet property="nextQuestionLabel" destination="dEc-SF-NWb" id="9tb-Ov-xgN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
