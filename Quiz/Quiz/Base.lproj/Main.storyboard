@@ -27,20 +27,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6d-Fm-rhx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6d-Fm-rhx">
                                 <rect key="frame" x="175" y="323" width="25" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhK-S4-zcF">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhK-S4-zcF">
                                 <rect key="frame" x="141" y="363" width="93" height="30"/>
                                 <state key="normal" title="Show Answer"/>
                                 <connections>
                                     <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Q0-jU-41e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaR-vH-vmm">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaR-vH-vmm">
                                 <rect key="frame" x="138" y="117" width="98" height="30"/>
                                 <state key="normal" title="Next Question"/>
                                 <connections>
@@ -60,7 +60,6 @@
                             <constraint firstItem="K6d-Fm-rhx" firstAttribute="centerX" secondItem="zaR-vH-vmm" secondAttribute="centerX" id="8c6-36-VOz"/>
                             <constraint firstItem="dEc-SF-NWb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G4g-ng-O0g"/>
                             <constraint firstItem="RhK-S4-zcF" firstAttribute="centerX" secondItem="zaR-vH-vmm" secondAttribute="centerX" id="GWg-Yf-ciK"/>
-                            <constraint firstItem="R1m-C8-F7d" firstAttribute="centerX" secondItem="zaR-vH-vmm" secondAttribute="centerX" id="Qwk-i3-OSU"/>
                             <constraint firstItem="RhK-S4-zcF" firstAttribute="top" secondItem="K6d-Fm-rhx" secondAttribute="bottom" constant="19" id="Utp-dr-Qgc"/>
                             <constraint firstItem="zaR-vH-vmm" firstAttribute="top" secondItem="R1m-C8-F7d" secondAttribute="bottom" constant="16" id="i1g-Rk-WpG"/>
                             <constraint firstItem="R1m-C8-F7d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="iWa-2y-W3t"/>
@@ -71,7 +70,9 @@
                     <connections>
                         <outlet property="answerLabel" destination="K6d-Fm-rhx" id="a42-7t-jhM"/>
                         <outlet property="currentQuestionLabel" destination="R1m-C8-F7d" id="7Dx-iY-V6k"/>
+                        <outlet property="currentQuestionLabelCenterXConstraint" destination="rxT-gU-dAY" id="e9f-1A-0f3"/>
                         <outlet property="nextQuestionLabel" destination="dEc-SF-NWb" id="9tb-Ov-xgN"/>
+                        <outlet property="nextQuestionLabelCenterXConstraint" destination="G4g-ng-O0g" id="CTk-hS-iZB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
