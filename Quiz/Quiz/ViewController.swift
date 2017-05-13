@@ -12,7 +12,9 @@ class ViewController: UIViewController {
 
     //MARK: Properties
     @IBOutlet var currentQuestionLabel: UILabel!
+    @IBOutlet var currentQuestionLabelCenterXConstraint: NSLayoutConstraint!
     @IBOutlet var nextQuestionLabel: UILabel!
+    @IBOutlet var nextQuestionLabelCenterXConstraint: NSLayoutConstraint!
     @IBOutlet var answerLabel: UILabel!
 
     let questions: [String] = [
