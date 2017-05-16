@@ -65,6 +65,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         centerMapOnLocation(location: initialLocation)
         
+        mapView.delegate = self
+
         // show a single artwork on map
         let artwork = Artwork(title: "King David Kalakaua",
                               locationName: "Waikiki Gateway Park",
