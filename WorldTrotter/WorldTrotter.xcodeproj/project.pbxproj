@@ -21,6 +21,7 @@
 		A99FDA701EC522AB00C380E4 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDA6F1EC522AB00C380E4 /* Artwork.swift */; };
 		A99FDA721EC5241E00C380E4 /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDA711EC5241E00C380E4 /* VCMapView.swift */; };
 		A9D68F841EBAA3A4005EE20A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9D68F861EBAA3A4005EE20A /* Localizable.strings */; };
+		A9DE40591EEBB05700853169 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DE40581EEBB05700853169 /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		A9D68F851EBAA3A4005EE20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A9D68F871EBAA3B7005EE20A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A9D68F881EBAA3B8005EE20A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A9DE40581EEBB05700853169 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = "../../../../../Desktop/Misc/Other Swift Tutorial Stuff/HonoluluArt/HonoluluArt/JSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				A9040E961E69426100191C40 /* AppDelegate.swift */,
 				A99FDA6F1EC522AB00C380E4 /* Artwork.swift */,
 				A9040EC41E6E9EE900191C40 /* ConversionViewController.swift */,
+				A9DE40581EEBB05700853169 /* JSON.swift */,
 				A9040EC91E7207ED00191C40 /* MapViewController.swift */,
 				A9D68F861EBAA3A4005EE20A /* Localizable.strings */,
 				A99FDA711EC5241E00C380E4 /* VCMapView.swift */,
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99FDA721EC5241E00C380E4 /* VCMapView.swift in Sources */,
+				A9DE40591EEBB05700853169 /* JSON.swift in Sources */,
 				A99FDA701EC522AB00C380E4 /* Artwork.swift in Sources */,
 				A9040EC51E6E9EE900191C40 /* ConversionViewController.swift in Sources */,
 				A9040ECA1E7207ED00191C40 /* MapViewController.swift in Sources */,
